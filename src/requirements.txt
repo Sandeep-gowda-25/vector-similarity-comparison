@@ -1,0 +1,9 @@
+pandas
+numpy
+openai
+fastapi
+redis
+uvicorn
+python-dotenv
+sentence-transformers
+# python-multipart
