@@ -1,0 +1,22 @@
+version : '3'
+services:
+  redis-app:
+    image : redis/redis-stack
+    container_name : redis-app
+    ports:
+      - "6001:6349"
+      - "6002:8001"
+    environment:
+      REDIS_ARGS: "--requirepass mypassword"
+    networks:
+      - redis-net
+
+  similarity-app:
+    image : my_app:1.0
+    ports:
+      - "5005:5005"
+    networks:
+      - redis-net
+networks:
+  redis-net:
+    driver: bridge
